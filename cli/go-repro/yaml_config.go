@@ -17,6 +17,7 @@ type YamlConfig struct {
 type YamlMapping struct {
 	Local  string `yaml:"local"`
 	Remote string `yaml:"remote"`
+	Host   string `yaml:"host"`
 }
 
 func UnmarshalYamlConfigBuffer(buffer []byte) (config YamlConfig, err error) {
