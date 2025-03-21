@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/mayflower/go-repro/lib"
+	"github.com/SubhashBose/go-repro/lib"
 )
 
 func parseCommandline() (cfg lib.Config, err error) {
