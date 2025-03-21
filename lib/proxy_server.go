@@ -234,7 +234,6 @@ func (p *ProxyServer) handleCompression(readerIn io.Reader, writerIn io.Writer, 
 
 	// We are ignoring any q-value here, so this is wrong for the case q=0
 	clientAcceptsGzip := strings.Contains(ctx.incomingRequest.Header.Get("accept-encoding"), "gzip")
-	clientAcceptsGzip = false // subhash: temp workaround
 
 	if ctx.upstreamResponse.Header.Get("content-encoding") == "gzip" &&
 		(rewriteResponse || !clientAcceptsGzip) {
