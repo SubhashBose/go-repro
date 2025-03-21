@@ -4,13 +4,13 @@ GO_TESTFLAGS = -cover -v
 
 GO_BUILDDIR = ./build
 GO_SRCDIRS = cli lib
-GO_PACKAGE_PREFIX = github.com/mayflower/go-repro
+GO_PACKAGE_PREFIX = github.com/SubhashBose/go-repro
 GO_PACKAGES = \
 	cli/go-repro \
 	lib
 GO_DEPENDENCIES = gopkg.in/yaml.v2
 
-GO_DEBUG_MAIN = github.com/mayflower/go-repro/cli/go-repro
+GO_DEBUG_MAIN = github.com/mayflower/SubhashBose/cli/go-repro
 GO_DEBUG_BINARY = ./go-repro-debug
 
 GIT = git
