@@ -20,8 +20,8 @@ func NewConfig() Config {
 	}
 }
 
-func (c *Config) AddMapping(local, remote string) (err error) {
-	m, err := NewMapping(local, remote)
+func (c *Config) AddMapping(local, remote, host string) (err error) {
+	m, err := NewMapping(local, remote, host)
 
 	if err == nil {
 		c.mappings = append(c.mappings, m)

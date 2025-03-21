@@ -8,6 +8,7 @@ import (
 type HostMapping struct {
 	local  string
 	remote string
+	host   string
 }
 
 func buildHostMappings(mappings []Mapping, requestHostvar string) (hostMappings []HostMapping) {
@@ -27,6 +28,8 @@ func buildHostMappings(mappings []Mapping, requestHostvar string) (hostMappings 
 		} else {
 			h.local = "http://" + mapping.local
 		}
+
+		h.host = mapping.host
 
 		hostMappings = append(hostMappings, h)
 	}

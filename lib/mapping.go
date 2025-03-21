@@ -9,9 +9,10 @@ import (
 type Mapping struct {
 	local  string
 	remote string
+	host   string
 }
 
-func NewMapping(local, remote string) (m Mapping, err error) {
+func NewMapping(local, remote, host string) (m Mapping, err error) {
 	if len(remote) > 0 && remote[len(remote)-1] == '/' {
 		remote = remote[:len(remote)-1]
 	}
@@ -25,6 +26,7 @@ func NewMapping(local, remote string) (m Mapping, err error) {
 	m = Mapping{
 		local:  local,
 		remote: remote,
+		host: host,
 	}
 
 	return

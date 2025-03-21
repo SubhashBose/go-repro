@@ -69,10 +69,10 @@ func addMappings(def string, cfg *lib.Config) (err error) {
 	for _, definition := range strings.Split(def, ",") {
 		parts := strings.Split(definition, "=")
 
-		if len(parts) != 2 {
+		if len(parts) != 3 {
 			err = errors.New(fmt.Sprintf("syntax error in mapping: %s", def))
 		} else {
-			err = cfg.AddMapping(parts[0], parts[1])
+			err = cfg.AddMapping(parts[0], parts[1], parts[2])
 		}
 
 		if err != nil {
