@@ -41,7 +41,7 @@ func (c *YamlConfig) createReproConfig() (cfg lib.Config, err error) {
 	cfg = lib.NewConfig()
 
 	for _, mapping := range c.Mappings {
-		err = cfg.AddMapping(mapping.Local, mapping.Remote)
+		err = cfg.AddMapping(mapping.Local, mapping.Remote, mapping.host)
 
 		if err != nil {
 			return
