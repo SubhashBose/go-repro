@@ -54,9 +54,9 @@ jobs:
         run: |
           export GO_PATH=~/go
           export PATH=$PATH:$GO_PATH/bin
-          make
-          mv build/bin/go-repro  "go-repro_${{ matrix.goos }}-${{ matrix.goarch }}"
-          #CGO_ENABLED=0 go build -x -v -trimpath -ldflags "-w -s -buildid=" -o "go-repro_${{ matrix.goos }}-${{ matrix.goarch }}"
+          cd cli/go-repro/
+          CGO_ENABLED=0 go build -x -v -trimpath -ldflags "-w -s -buildid=" -o ../../"go-repro_$GOOS-$GOARCH"
+          #mv go-repro  ../../"go-repro_${{ matrix.goos }}-${{ matrix.goarch }}"
 
       - name: Upload to artifact storage
         uses: actions/upload-artifact@v4
