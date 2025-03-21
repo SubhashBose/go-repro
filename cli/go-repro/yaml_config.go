@@ -4,7 +4,7 @@ import (
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 
-	"github.com/mayflower/go-repro/lib"
+	"github.com/SubhashBose/go-repro/lib"
 )
 
 type YamlConfig struct {
