@@ -30,7 +30,7 @@ func (*GenericHeaderRewriter) RewriteSpecifiedIncomingHeaders(keys []string, hea
 
 		if value := headers.Get(key); value != "" {
 			for _, mapping := range ctx.HostMappings() {
-				if strings.Contains(value, mapping.local) {
+				if strings.Contains(value, mapping.host) {
 					value = strings.Replace(value, mapping.host, mapping.remote, -1)
 					rewritten = true
 				}
